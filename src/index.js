@@ -28,7 +28,7 @@ app.post('/', async (req, res) => {
 
   if (mValidated) {
     const { data } = body
-    const name = message.split(' ')[8] || 'nuevo comprador'
+    const name = message.split(' ')[10] || 'nuevo comprador'
 
     const options = {
       ...defOptions,
