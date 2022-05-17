@@ -1,8 +1,7 @@
 const templates = {
   confirm: (name) => {
     return {
-      message: `¡Hola ${name}! Gracias por tu pedido 📦` +
-        'Para que los guantes tengan la máxima efectividad, se necesita la *talla correcta*, tómese su tiempo y mida su mano de acuerdo a la imagen por favor.',
+      message: `¡Hola ${name}! Gracias por tu pedido 📦\nPara que los guantes tengan la máxima efectividad, se necesita la *talla correcta*, tómese su tiempo y mida su mano de acuerdo a la imagen por favor.`,
       priority: 'urgent',
       media: {
         file: '6282fd1a18cf29beed13a761',
