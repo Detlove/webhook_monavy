@@ -11,8 +11,12 @@ const templates = {
   },
   information: () => {
     return {
-      message: 'Claro que sí, los guantes estan fabricados de 60% Algodón, 33% Poliéster y 7% Elastano de grado médico.\n\nPerfectos para aliviar el dolor causado por las artritis, son lavables y su precio es de $59,900 pesos colombianos\n\nSi tiene alguna pregunta no dude en compartirla con nosotros',
-      priority: 'urgent'
+      message: 'Claro que sí, los guantes están fabricados de *60%* Algodón, *33%* Poliéster y *7%* Elastano de grado médico, son lavables y su precio es de $59,900 pesos colombianos\n\n💬 Si tiene alguna pregunta no dude en compartirla con nosotros',
+      priority: 'urgent',
+      media: {
+        file: '628312c211023a7b1e0c2735',
+        format: 'native'
+      }
     }
   }
 }
