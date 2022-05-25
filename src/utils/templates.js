@@ -13,19 +13,18 @@ const templates = {
     }
   },
   information: (m) => {
-    const iPr = m.indexOf('👉 *')
-    const product = m.slice((iPr + 4), (m.length - 1))
+    const product = m.slice((m.indexOf('👉 *') + 4), (m.length - 1))
+
+    const PrInfo = ProductInfos[product]
 
     return {
-      message:
-      ProductInfos[product]
-        ? ProductInfos[product] + '\n\n💬 Si tiene más preguntas no dude en compartirlas con nosotros por favor'
-        : 'No info yet',
-      priority: 'urgent',
-      media: {
-        file: '628312c211023a7b1e0c2735',
-        format: 'native'
-      }
+      message: PrInfo.message
+        ? PrInfo.message +
+        '\n\n📦 Si desea adquirirlos necesito estos datos para generar su orden por favor\n\nNombre y Apellidos, Teléfono, Ciudad, Departamento, Dirección' +
+        '\n\n💬 Si tiene más preguntas no dude en compartirlas con nosotros por favor'
+        : 'En un momento un agente de ventas responderá tus dudas, quédate en linea por favor 🙏',
+      media: PrInfo.media || null,
+      priority: 'urgent'
     }
   }
 }
