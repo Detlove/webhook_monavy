@@ -20,9 +20,9 @@ const templates = {
     return {
       message: PrInfo.message
         ? PrInfo.message +
-        '\n\n📦 Si desea adquirirlos necesito estos datos para generar su orden por favor\n\nNombre y Apellidos, Teléfono, Ciudad, Departamento, Dirección' +
+        '\n\n📦 Si desea adquirirlos necesito estos datos para generar su orden por favor\n\n*Nombre y Apellidos, Teléfono, Ciudad, Departamento, Dirección*' +
         '\n\n💬 Si tiene más preguntas no dude en compartirlas con nosotros por favor'
-        : 'En un momento un agente de ventas responderá tus dudas, quédate en linea por favor 🙏',
+        : 'En un momento uno de nuestros agentes responderá tus dudas, quédate en linea por favor 🙏',
       media: PrInfo.media || null,
       priority: 'urgent'
     }
