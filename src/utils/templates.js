@@ -1,5 +1,8 @@
+const ProductInfos = require('../data/ProductInfos')
+
 const templates = {
-  confirm: (name) => {
+  confirm: (m) => {
+    const name = m.split(' ')[10] || 'nuevo comprador'
     return {
       message: `¡Hola ${name}! Gracias por tu pedido 📦\nPara que los guantes tengan la máxima efectividad, se necesita la *talla correcta*, tómese su tiempo y mida su mano de acuerdo a la imagen por favor.`,
       priority: 'urgent',
@@ -9,9 +12,15 @@ const templates = {
       }
     }
   },
-  information: () => {
+  information: (m) => {
+    const iPr = m.indexOf('👉 *')
+    const product = m.slice((iPr + 4), (m.length - 1))
+
     return {
-      message: 'Claro que sí, los guantes están fabricados de *60%* Algodón, *33%* Poliéster y *7%* Elastano de grado médico, son lavables, perfectos para aliviar el dolor causado por las artritis o túnel carpiano, el precio es de *$79,900* pesos colombianos\n\n💬 Si tiene más preguntas no dude en compartirlas con nosotros por favor',
+      message:
+      ProductInfos[product]
+        ? ProductInfos[product] + '\n\n💬 Si tiene más preguntas no dude en compartirlas con nosotros por favor'
+        : 'No info yet',
       priority: 'urgent',
       media: {
         file: '628312c211023a7b1e0c2735',

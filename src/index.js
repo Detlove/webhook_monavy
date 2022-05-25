@@ -28,13 +28,12 @@ app.post('/', async (req, res) => {
 
   if (mValidated) {
     const { data } = body
-    const name = message.split(' ')[10] || 'nuevo comprador'
 
     const options = {
       ...defOptions,
       data: {
         phone: data.fromNumber,
-        ...mTemplates[mValidated](name)
+        ...mTemplates[mValidated](message)
       }
     }
 
