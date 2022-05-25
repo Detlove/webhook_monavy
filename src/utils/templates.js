@@ -2,7 +2,10 @@ const ProductInfos = require('../data/ProductInfos')
 
 const templates = {
   confirm: (m) => {
-    const name = m.split(' ')[11] || 'nuevo comprador'
+    /* Prevent "*" character */
+    const pMessage = m.replace(/\*/g, '')
+
+    const name = pMessage.split(' ')[10] || 'nuevo comprador'
     return {
       message: `¡Hola ${name}! Gracias por tu pedido 📦\nPara que los guantes tengan la máxima efectividad, se necesita la *talla correcta*, tómese su tiempo y mida su mano de acuerdo a la imagen por favor.`,
       priority: 'urgent',
