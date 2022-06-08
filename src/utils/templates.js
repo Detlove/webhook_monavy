@@ -16,9 +16,14 @@ const templates = {
     }
   },
   information: (m) => {
-    const product = m.slice((m.indexOf('👉 *') + 4), (m.length - 1))
+    /* Prevent "*" character */
+    const pMessage = m.replace(/\*/g, '')
 
-    const PrInfo = ProductInfos[product]
+    const product = pMessage.slice((pMessage.indexOf('👉') + 3), pMessage.length)
+
+    console.log(product)
+
+    const PrInfo = ProductInfos[product] || ProductInfos['Guantes de Compresión Suave para Artritis']
 
     return {
       message: PrInfo.message
