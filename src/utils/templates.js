@@ -21,8 +21,6 @@ const templates = {
 
     const product = pMessage.slice((pMessage.indexOf('👉') + 3), pMessage.length)
 
-    console.log(product)
-
     const PrInfo = ProductInfos[product] || ProductInfos['Guantes de Compresión Suave para Artritis']
 
     return {
