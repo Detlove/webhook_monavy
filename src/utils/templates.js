@@ -21,7 +21,7 @@ const templates = {
 
     const product = pMessage.slice((pMessage.indexOf('👉') + 3), pMessage.length)
 
-    const PrInfo = ProductInfos[product] || ProductInfos['Guantes de Compresión Suave para Artritis']
+    const PrInfo = ProductInfos[product] || ProductInfos['InstaCompress® Guantes con Microfibra de Bambú']
 
     return {
       message: PrInfo.message
