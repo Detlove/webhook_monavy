@@ -1,3 +1,4 @@
+const getProduct = require('./getProduct')
 const ProductInfos = require('../data/ProductInfos')
 
 const templates = {
@@ -19,9 +20,9 @@ const templates = {
     /* Prevent "*" character */
     const pMessage = m.replace(/\*/g, '')
 
-    const product = pMessage.slice((pMessage.indexOf('👉') + 3), pMessage.length)
+    const product = getProduct(pMessage)
 
-    const PrInfo = ProductInfos[product] || ProductInfos['InstaCompress® Guantes con Microfibra de Bambú']
+    const PrInfo = ProductInfos[product] || ProductInfos.instacompress
 
     return {
       message: PrInfo.message

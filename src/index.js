@@ -6,7 +6,7 @@ const cors = require('cors')
 const axios = require('axios').default
 
 /* Utils */
-const mValidation = require('./utils/getMessageType')
+const mValidation = require('./utils/mValidation')
 const mTemplates = require('./utils/templates')
 
 const app = express()
