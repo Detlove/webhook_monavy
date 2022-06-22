@@ -8,7 +8,7 @@ const templates = {
 
     const name = pMessage.split(' ')[10] || 'nuevo comprador'
     return {
-      message: `¡Hola ${name}! Gracias por su pedido ❤️\n\nSus guantes están listos para ser enviados, solo necesitamos su talla por favor\n\nSi en el pasado ya usó algún tipo de guante podemos usar esa misma talla o si por el contrario no sabe su talla, puede averiguarlo siguiendo las instrucciones dadas en la imagen.\n\nEsperamos su respuesta.`,
+      message: `*¡Hola ${name}! Gracias por su pedido* ❤️\n\nSus guantes están listos para ser enviados, *solo necesitamos su talla* por favor\n\nSi en el pasado ya usó algún tipo de guante *podemos usar esa misma talla* o si por el contrario no sabe su talla, puede averiguarlo siguiendo las instrucciones dadas en la imagen.\n\nEsperamos su respuesta.`,
       priority: 'urgent',
       media: {
         file: '6282fd1a18cf29beed13a761',
