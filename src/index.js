@@ -15,7 +15,7 @@ app.use(cors())
 
 const defOptions = {
   method: 'POST',
-  url: 'https://api.wali.chat/v1/messages',
+  url: 'https://api.wassenger.com/v1/messages',
   headers: { 'Content-Type': 'application/json', Token: process.env.WA_TOKEN }
 }
 
