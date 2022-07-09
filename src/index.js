@@ -8,6 +8,7 @@ const axios = require('axios').default
 /* Utils */
 const mValidation = require('./utils/mValidation')
 const mTemplates = require('./utils/templates')
+const serialize = require('./utils/serialize')
 
 const app = express()
 app.use(express.json())
@@ -15,36 +16,44 @@ app.use(cors())
 
 const defOptions = {
   method: 'POST',
-  url: 'https://api.wassenger.com/v1/messages',
-  headers: { 'Content-Type': 'application/json', Token: process.env.WA_TOKEN }
+  url: `https://api.ultramsg.com/${process.env.INSTANCE_ID}/messages/image`,
+  headers: {
+    'content-type': 'application/x-www-form-urlencoded'
+  },
+  data: {
+    token: process.env.TOKEN,
+    priority: 0
+  }
 }
 
 /* Endpoint to / */
 app.post('/', async (req, res) => {
-  const body = req?.body || {}
-  const message = body?.data?.body || 'no message'
+  const m = req.body?.data?.body || 'no message'
+
+  /* Prevent "*" character */
+  const message = m.replace(/\*/g, '')
 
   const mValidated = mValidation(message)
 
   if (mValidated) {
-    const { data } = body
+    const { data } = req.body
 
     const options = {
       ...defOptions,
-      data: {
-        phone: data.fromNumber,
+      data: serialize({
+        ...defOptions.data,
+        to: data.from,
         ...mTemplates[mValidated](message)
-      }
+      })
     }
 
     await axios.request(options).then((response) => {
       console.log(response.data)
+      res.status(200).end()
     }).catch(function (error) {
       console.error(error)
       res.status(500).end()
     })
-
-    res.end()
   } else {
     res.end()
   }
