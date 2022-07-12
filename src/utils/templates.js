@@ -17,8 +17,8 @@ const templates = {
 
     if (m.includes('cuchara medidora inteligente')) {
       return {
-        image: 'https://i.ibb.co/z7hnPbg/waimage.jpg',
-        caption: 'cuchara'
+        image: 'https://i.ibb.co/MNsPwq3/cuchara-inte.jpg',
+        caption: '👋 Hola un gusto saludarle, soy Clara\n\nLa *Cuchara Medidora Inteligente con Pantalla LCD* es la herramienta ideal con un margen de error mínimo que hará que cocinar postres y elaboradas preparaciones sea pan comido, el precio es de *$59,900* pesos colombianos.\n\n 👩🏻‍🦱 *Estoy aquí para resolver todas sus dudas.*\n\n¿En que puedo ayudarle?'
       }
     } else {
       return {
