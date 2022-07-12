@@ -1,6 +1,3 @@
-const getProduct = require('./getProduct')
-const ProductInfos = require('../data/ProductInfos')
-
 const templates = {
   confirm: (m) => {
     const name = m.split(' ')[10] || 'nuevo comprador'
@@ -11,16 +8,23 @@ const templates = {
     }
   },
   information: (m) => {
-    const product = getProduct(m)
+    if (m.includes('InstaCompress®')) {
+      return {
+        image: 'https://i.ibb.co/z7hnPbg/waimage.jpg',
+        caption: '👋 Hola un gusto saludarle, soy el *Dr. Sergio Beleño Zapata*\n\nLos guantes están fabricados de *80%* microfibra de bambú + *20%* elastano de grado médico.\n\nPerfectos para aliviar el dolor causado por artritis o túnel carpiano, el precio es de *$69,900* pesos colombianos.\n\n👨‍⚕️ *Estoy aquí para resolver todas sus dudas.*\n\n¿En que puedo ayudarle?'
+      }
+    }
 
-    const PrInfo = ProductInfos[product] || ProductInfos.instacompress
-
-    return {
-      caption:
-        '👋 Hola un gusto saludarle, soy el *Dr. Sergio Beleño Zapata*\n\n' +
-        PrInfo.caption +
-        '\n\n👨‍⚕️ *Estoy aquí para resolver todas sus dudas.*\n\n¿En que puedo ayudarle?',
-      image: PrInfo.image
+    if (m.includes('cuchara medidora inteligente')) {
+      return {
+        image: 'https://i.ibb.co/z7hnPbg/waimage.jpg',
+        caption: 'cuchara'
+      }
+    } else {
+      return {
+        image: 'https://i.ibb.co/z7hnPbg/waimage.jpg',
+        caption: 'Información aún no disponible'
+      }
     }
   }
 }
