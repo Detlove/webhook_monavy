@@ -2,9 +2,23 @@ const templates = {
   confirm: (m) => {
     const name = m.split(' ')[10] || 'nuevo comprador'
 
-    return {
-      image: 'https://i.ibb.co/4frCdJW/tallas.png',
-      caption: `*¡Hola ${name}! Gracias por su pedido* ❤️\n\nSus guantes están listos para ser enviados, *solo necesitamos su talla* por favor\n\nSi en el pasado ya usó algún tipo de guante *podemos usar esa misma talla* o si por el contrario no sabe su talla, puede averiguarlo siguiendo las instrucciones dadas en la imagen.\n\nEsperamos su respuesta.`
+    if (m.includes('InstaCompress®')) {
+      return {
+        image: 'https://i.ibb.co/4frCdJW/tallas.png',
+        caption: `*¡Hola ${name}! Gracias por su pedido* ❤️\n\nSus guantes están listos para ser enviados, *solo necesitamos su talla* por favor\n\nSi en el pasado ya usó algún tipo de guante *podemos usar esa misma talla* o si por el contrario no sabe su talla, puede averiguarlo siguiendo las instrucciones dadas en la imagen.\n\nEsperamos su respuesta.`
+      }
+    }
+
+    if (m.includes('cuchara medidora inteligente')) {
+      return {
+        image: 'https://i.ibb.co/pRzrV6B/gracias.jpg',
+        caption: `Perfecto ${name}, su pedido ha sido confirmado 🎉\n\nEl tiempo estimado de llegada es de 2 a 4 días hábiles (lunes a sábado) desde que parte de nuestro almacén\n\nSi tiene alguna pregunta no dude en compartirla con nosotros.`
+      }
+    } else {
+      return {
+        image: 'https://i.ibb.co/z7hnPbg/waimage.jpg',
+        caption: 'Información aún no disponible'
+      }
     }
   },
   information: (m) => {
