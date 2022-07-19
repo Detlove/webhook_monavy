@@ -4,7 +4,7 @@ const templates = {
 
     if (m.includes('InstaCompress®')) {
       return {
-        image: 'https://i.ibb.co/4frCdJW/tallas.png',
+        image: 'https://i.ibb.co/sHfzxL1/tallas2.jpg',
         caption: `*¡Hola ${name}! Gracias por su pedido* ❤️\n\nSus guantes están listos para ser enviados, *solo necesitamos su talla* por favor\n\nSi en el pasado ya usó algún tipo de guante *podemos usar esa misma talla* o si por el contrario no sabe su talla, puede averiguarlo siguiendo las instrucciones dadas en la imagen.\n\nEsperamos su respuesta.`
       }
     }
